@@ -1,0 +1,55 @@
+'use strict';
+
+var path = require('path');
+var webpack = require('webpack');
+var easyfile = require('easyfile');
+var compiledTemplate = require('./src/compiledTemplate');
+
+var html = compiledTemplate({
+  title: '',
+  assets: {
+    js: {
+      main: 'main.js',
+      react: 'react.js'
+    },
+    css: {}
+  },
+  appHtml: '',
+  appData: 'null'
+});
+
+// easyfile.write('./dist/index.html', html, {force: true})
+
+module.exports = {
+  entry: {
+    main: "./src/main.js",
+    vendor: ["react"],
+  },
+  output: {
+    filename: "[name].js",
+    path: __dirname + "/dist",
+  },
+  module: {
+    loaders: [
+      {
+        test: /.jsx?$/,
+        loader: 'babel-loader',
+        exclude: /node_modules/,
+        query: {
+          presets: ['es2015', 'react']
+        }
+      }
+    ]
+  },
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': JSON.stringify('development'),
+      }
+    }),
+    new webpack.ProvidePlugin({
+      'fetch': 'imports?this=>global!exports?global.fetch!whatwg-fetch'
+    }),
+    new webpack.optimize.CommonsChunkPlugin(/* chunkName= */"vendor", /* filename= */"react.js"),
+  ],
+}
