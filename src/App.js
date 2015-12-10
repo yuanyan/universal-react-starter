@@ -35,10 +35,31 @@ module.exports = React.createClass({
       <div>
         {
           this.state.movies.map(function(movie, index){
-            return <div key={index}>{movie.title} <img src={movie.posters.thumbnail} /> </div>
+            return (<div key={index}>
+            <img style={styles.poster} src={movie.posters.thumbnail} />
+            <div style={styles.info}>
+              <span style={styles.title}>{movie.title}</span>
+            </div>
+            </div>)
           })
         }
       </div>
     )
   },
-})
+});
+
+var styles = {
+  poster: {
+    backgroundColor: '#dddddd',
+    height: '93px',
+    marginRight: '10px',
+    width: '60px'
+  },
+  info: {
+    display: 'inline-block',
+    flex: 1
+  },
+  title: {
+    fontSize: '16px',
+  }
+}

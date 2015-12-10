@@ -21,6 +21,7 @@ var html = compiledTemplate({
 // easyfile.write('./dist/index.html', html, {force: true})
 
 module.exports = {
+  watch: process.env.TARGET == 'dev',
   entry: {
     main: "./src/main.js",
     vendor: ["react"],

@@ -1,5 +1,6 @@
 var fs = require('fs');
 var path = require('path');
+var webpack = require("webpack");
 
 function readBabelRC() {
   var rcpath = path.join(__dirname, '..', 'src', '.babelrc');
@@ -14,5 +15,14 @@ function babelRegisterOnly(onlyList) {
 };
 
 babelRegisterOnly([/src/]);
+
+// start webpack
+if(process.env.TARGET == 'dev'){
+  // returns a Compiler instance
+  webpack(require('../webpack.config'), function(err, stats) {
+    var res = stats.toString({colors: true});
+    console.log(res)
+  });
+}
 
 require('../src/server');

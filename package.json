@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node scripts/start.js",
+    "dev": "TARGET=dev nodemon --ignore dist/ scripts/start.js",
     "build": "webpack"
   },
   "author": "",
@@ -21,6 +22,7 @@
     "koa-static": "~1.5.2",
     "lodash": "~3.10.1",
     "node-fetch": "^1.3.3",
+    "nodemon": "~1.8.1",
     "react": "~0.14.3",
     "react-dom": "~0.14.3",
     "webpack": "~1.12.9",
