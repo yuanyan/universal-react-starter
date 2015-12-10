@@ -17,7 +17,7 @@ function babelRegisterOnly(onlyList) {
 babelRegisterOnly([/src/]);
 
 // start webpack
-if(process.env.TARGET == 'dev'){
+if(process.env.NODE_ENV === 'local'){
   // returns a Compiler instance
   webpack(require('../webpack.config'), function(err, stats) {
     var res = stats.toString({colors: true});
