@@ -1,7 +1,7 @@
 {
   "name": "universal-react-starter",
   "version": "0.0.2",
-  "description": "A professional react template for building universal (isomorphic) web apps",
+  "description": "A professional universal (isomorphic) react starter for building web apps.",
   "main": "src/main.js",
   "scripts": {
     "start": "node scripts/start.js",
