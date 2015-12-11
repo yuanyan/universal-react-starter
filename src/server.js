@@ -10,12 +10,13 @@ var compiledTemplate = require('./compiledTemplate');
 var safeStringify = require('./safeStringify');
 var fetchData = require('./fetchData');
 var renderApp = require('./renderApp');
+var assets = require('./assets');
 
 var _ = require('lodash');
 // using custom template delimiters
 _.templateSettings.interpolate = /{{([\s\S]+?)}}/g;
 
-app.use(serve(__dirname + '/../dist'));
+app.use(serve(__dirname + '/../dist', { index: false }));
 
 app.use(function *(){
 
@@ -30,13 +31,7 @@ app.use(function *(){
 
   var html = compiledTemplate({
     title: '',
-    assets: {
-      js: {
-        main: 'main.js',
-        react: 'react.js'
-      },
-      css: {}
-    },
+    assets: assets,
     appHtml: appHtml,
     appData: safeStringify(data)
   });

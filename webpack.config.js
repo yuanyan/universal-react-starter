@@ -4,21 +4,16 @@ var path = require('path');
 var webpack = require('webpack');
 var easyfile = require('easyfile');
 var compiledTemplate = require('./src/compiledTemplate');
+var assets = require('./src/assets');
 
 var html = compiledTemplate({
   title: '',
-  assets: {
-    js: {
-      main: 'main.js',
-      react: 'react.js'
-    },
-    css: {}
-  },
+  assets: assets,
   appHtml: '',
   appData: 'null'
 });
 
-// easyfile.write('./dist/index.html', html, {force: true})
+easyfile.write('./dist/index.html', html, {force: true})
 
 module.exports = {
   watch: process.env.NODE_ENV === 'local',

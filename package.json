@@ -1,6 +1,6 @@
 {
   "name": "universal-react-starter",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A professional universal (isomorphic) react starter for building web apps.",
   "main": "src/main.js",
   "scripts": {
