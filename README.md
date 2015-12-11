@@ -1,2 +1,2 @@
-# Isomorphic React Boilerplate
-> A professional react template for building isomorphic web apps.
+# Universal (isomorphic) React Starter
+> A professional universal (isomorphic) react template for building web apps.

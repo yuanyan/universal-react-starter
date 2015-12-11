@@ -1,14 +1,14 @@
 {
-  "name": "isomorphic-react-demo",
-  "version": "1.0.0",
-  "description": "A professional react template for building isomorphic web apps",
-  "main": "index.js",
+  "name": "universal-react-starter",
+  "version": "0.0.2",
+  "description": "A professional react template for building universal (isomorphic) web apps",
+  "main": "src/main.js",
   "scripts": {
     "start": "node scripts/start.js",
     "dev": "NODE_ENV=local nodemon --ignore dist/ scripts/start.js",
     "build": "webpack"
   },
-  "author": "",
+  "author": "Yuanyan Cao",
   "license": "ISC",
   "dependencies": {
     "babel-core": "~6.2.1",
@@ -29,6 +29,6 @@
     "imports-loader": "~0.6.5",
     "webpack-dev-server": "~1.14.0",
     "nodemon": "~1.8.1",
-    "webpack": "~1.12.9",
+    "webpack": "~1.12.9"
   }
 }
