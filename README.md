@@ -20,7 +20,7 @@ fetch(url).then(function (res) {
 
 ## Entry HTML
 
-Entry HTML `src/inde.jst` is a JST file. 
+Entry HTML `src/inde.jst` is a JST file.
 
 ## Scripts
 * Start - **npm start** - Start server for production.
